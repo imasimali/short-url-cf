@@ -132,7 +132,7 @@ async function handleRequest(request) {
   console.log(path);
   if (!path) {
     const html = await fetch(
-      "https://raw.githubusercontent.com/imasimali/short-url-cf/main/render/index.html"
+      "https://cdn.jsdelivr.net/gh/imasimali/short-url-cf/render/index.html"
     );
 
     return new Response(await html.text(), {
@@ -155,7 +155,7 @@ async function handleRequest(request) {
   if (location) {
     if (config.no_ref == "on") {
       let no_ref = await fetch(
-        "https://raw.githubusercontent.com/imasimali/short-url-cf/main/render/no-ref.html"
+        "https://cdn.jsdelivr.net/gh/imasimali/short-url-cf/render/no-ref.html"
       );
       no_ref = await no_ref.text();
       no_ref = no_ref.replace(/{Replace}/gm, location);
